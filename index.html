@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Omkar Priyadarsan | Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <!-- EmailJS SDK -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+</head>
+<body>
+
+  <!-- ========== NETWORK CANVAS BACKGROUND ========== -->
+  <canvas id="networkCanvas"></canvas>
+
+  <!-- ========== CURSOR ========== -->
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-outline" id="cursorOutline"></div>
+
+  <!-- ========== LOADER ========== -->
+  <div class="loader" id="loader">
+    <div class="loader-inner">
+      <div class="loader-ring"></div>
+      <div class="loader-text">
+        <span class="mono">INITIALIZING</span>
+        <div class="loader-bar"><div class="loader-fill" id="loaderFill"></div></div>
+        <span class="loader-pct" id="loaderPct">0%</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== NAV ========== -->
+  <nav class="nav" id="nav">
+    <div class="nav-logo">
+      <span class="glitch" data-text="OP">OP</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#home" class="nav-link">Home</a></li>
+      <li><a href="#about" class="nav-link">About</a></li>
+      <li><a href="#skills" class="nav-link">Skills</a></li>
+      <li><a href="#projects" class="nav-link">Projects</a></li>
+      <li><a href="#contact" class="nav-link">Contact</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- ========== HERO ========== -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <p class="hero-greeting mono reveal">HELLO, WORLD — I AM</p>
+      <h1 class="hero-name reveal-delay-1">
+        <span class="glitch-big" data-text="OMKAR">OMKAR</span>
+        <span class="glitch-big accent" data-text="PRIYADARSAN">PRIYADARSAN</span>
+      </h1>
+      <div class="hero-roles reveal-delay-2">
+        <span class="role-prefix mono">// </span>
+        <span class="type-text" id="typeText"></span>
+        <span class="type-cursor">|</span>
+      </div>
+      <p class="hero-bio reveal-delay-3">
+        Crafting cutting-edge digital experiences at the intersection of <span class="accent-text">technology</span> & <span class="accent-text">creativity</span>.
+      </p>
+      <div class="hero-cta reveal-delay-4">
+        <a href="#projects" class="btn btn-primary">
+          <span>View Projects</span>
+          <i class="fas fa-arrow-right"></i>
+        </a>
+        <a href="#contact" class="btn btn-outline">
+          <span>Hire Me</span>
+        </a>
+      </div>
+      <div class="hero-socials reveal-delay-4">
+        <a href="https://github.com/omkarpriyadarsan" target="_blank" class="social-link" id="githubLink">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="https://linkedin.com/in/omkar-priyadarsan-58b224309" target="_blank" class="social-link" id="linkedinLink">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+        <a href="mailto:omkarpriyadarsan2@gmail.com" class="social-link">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </div>
+    </div>
+    <div class="hero-visual reveal-delay-2">
+      <div class="photo-container">
+        <div class="photo-ring ring-1"></div>
+        <div class="photo-ring ring-2"></div>
+        <div class="photo-ring ring-3"></div>
+        <div class="photo-hexagon">
+          <!-- Replace src with your actual photo path -->
+          <img src="image1.jpeg" alt="Omkar Priyadarsan" class="profile-photo" id="profilePhoto"/>
+          <div class="photo-placeholder" id="photoPlaceholder">
+            <i class="fas fa-user"></i>
+            <span class="mono" style="font-size:0.65rem;margin-top:8px;opacity:0.6;">your-photo.jpg</span>
+          </div>
+        </div>
+        <div class="photo-badge">
+          <span class="mono">AVAILABLE</span>
+          <span class="badge-dot"></span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-scroll-hint">
+      <span class="mono">SCROLL</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ========== ABOUT ========== -->
+  <section class="section about" id="about">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-num mono">01.</span>
+        <h2 class="section-title">About Me</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="about-grid">
+        <div class="about-text scroll-reveal">
+          <p>
+            I'm a <span class="accent-text">passionate developer</span> and tech enthusiast who loves building elegant, high-performance applications that solve real-world problems. With a strong foundation in both frontend and backend technologies, I bring ideas to life with clean code and creative thinking.
+          </p>
+          <p>
+            When I'm not coding, you'll find me exploring new frameworks, contributing to open source, or sharpening my problem-solving skills through competitive programming.
+          </p>
+          <div class="about-stats">
+            <div class="stat-card">
+              <span class="stat-num" data-target="15">0</span><span class="stat-plus">+</span>
+              <span class="stat-label mono">Projects</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-num" data-target="2">0</span><span class="stat-plus">+</span>
+              <span class="stat-label mono">Years Exp.</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-num" data-target="10">0</span><span class="stat-plus">+</span>
+              <span class="stat-label mono">Technologies</span>
+            </div>
+          </div>
+          <div class="about-links">
+            <a href="your-resume.pdf" download class="btn btn-primary btn-sm">
+              <i class="fas fa-download"></i> Download CV
+            </a>
+          </div>
+        </div>
+        <div class="about-decoration scroll-reveal">
+          <div class="deco-grid">
+            <div class="deco-card"><i class="fas fa-code"></i><span>Clean Code</span></div>
+            <div class="deco-card"><i class="fas fa-rocket"></i><span>Fast Delivery</span></div>
+            <div class="deco-card"><i class="fas fa-paint-brush"></i><span>UI/UX Focus</span></div>
+            <div class="deco-card"><i class="fas fa-brain"></i><span>Problem Solver</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SKILLS ========== -->
+  <section class="section skills" id="skills">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-num mono">02.</span>
+        <h2 class="section-title">Skills & Technologies</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="skills-categories scroll-reveal">
+
+        <div class="skill-category">
+          <h3 class="skill-cat-title"><i class="fas fa-laptop-code"></i> Frontend</h3>
+          <div class="skill-items">
+            <div class="skill-item" data-level="90"><span>HTML5 / CSS3</span><div class="skill-bar"><div class="skill-fill"></div></div></div>
+            <div class="skill-item" data-level="85"><span>JavaScript (ES6+)</span><div class="skill-bar"><div class="skill-fill"></div></div></div>
+            <div class="skill-item" data-level="80"><span>React.js</span><div class="skill-bar"><div class="skill-fill"></div></div></div>
+            <div class="skill-item" data-level="75"><span>Next.js</span><div class="skill-bar"><div class="skill-fill"></div></div></div>
+            <div class="skill-item" data-level="70"><span>Tailwind CSS</span><div class="skill-bar"><div class="skill-fill"></div></div></div>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <h3 class="skill-cat-title"><i class="fas fa-server"></i> Backend</h3>
+          <div class="skill-items">
+            <div class="skill-item" data-level="80"><span>Node.js</span><div class="skill-bar"><div class="skill-fill"></div></div></div>
+            <div class="skill-item" data-level="75"><span>Express.js</span><div class="skill-bar"><div class="skill-fill"></div></div></div>
+            <div class="skill-item" data-level="70"><span>Python</span><div class="skill-bar"><div class="skill-fill"></div></div></div>
+            <div class="skill-item" data-level="65"><span>REST APIs</span><div class="skill-bar"><div class="skill-fill"></div></div></div>
+            <div class="skill-item" data-level="60"><span>MongoDB</span><div class="skill-bar"><div class="skill-fill"></div></div></div>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <h3 class="skill-cat-title"><i class="fas fa-tools"></i> Tools & Others</h3>
+          <div class="skill-items">
+            <div class="skill-item" data-level="85"><span>Git & GitHub</span><div class="skill-bar"><div class="skill-fill"></div></div></div>
+            <div class="skill-item" data-level="75"><span>VS Code</span><div class="skill-bar"><div class="skill-fill"></div></div></div>
+            <div class="skill-item" data-level="70"><span>Docker</span><div class="skill-bar"><div class="skill-fill"></div></div></div>
+            <div class="skill-item" data-level="65"><span>Linux / Bash</span><div class="skill-bar"><div class="skill-fill"></div></div></div>
+            <div class="skill-item" data-level="60"><span>Figma</span><div class="skill-bar"><div class="skill-fill"></div></div></div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Tech badges -->
+      <div class="tech-badges scroll-reveal">
+        <span class="badge">C++</span><span class="badge">Java</span><span class="badge">SQL</span>
+        <span class="badge">Firebase</span><span class="badge">GraphQL</span><span class="badge">Redux</span>
+        <span class="badge">TypeScript</span><span class="badge">AWS</span><span class="badge">Postman</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PROJECTS ========== -->
+  <section class="section projects" id="projects">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-num mono">03.</span>
+        <h2 class="section-title">Featured Projects</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="projects-grid">
+
+        <!-- Project Card 1 -->
+        <div class="project-card scroll-reveal">
+          <div class="project-card-inner">
+            <div class="project-header">
+              <div class="project-icon"><i class="fas fa-robot"></i></div>
+              <div class="project-links">
+                <a href="#" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                <a href="#" target="_blank" title="Live Demo"><i class="fas fa-external-link-alt"></i></a>
+              </div>
+            </div>
+            <h3 class="project-title">AI Chat Application</h3>
+            <p class="project-desc">A full-stack AI-powered chatbot with real-time messaging, context memory, and integration with multiple LLM APIs.</p>
+            <div class="project-tech">
+              <span>React</span><span>Node.js</span><span>OpenAI</span><span>Socket.io</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project Card 2 -->
+        <div class="project-card scroll-reveal">
+          <div class="project-card-inner">
+            <div class="project-header">
+              <div class="project-icon"><i class="fas fa-shopping-cart"></i></div>
+              <div class="project-links">
+                <a href="#" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                <a href="#" target="_blank" title="Live Demo"><i class="fas fa-external-link-alt"></i></a>
+              </div>
+            </div>
+            <h3 class="project-title">E-Commerce Platform</h3>
+            <p class="project-desc">A scalable e-commerce solution with payment integration, inventory management, and an admin dashboard.</p>
+            <div class="project-tech">
+              <span>Next.js</span><span>MongoDB</span><span>Stripe</span><span>Redux</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project Card 3 -->
+        <div class="project-card scroll-reveal">
+          <div class="project-card-inner">
+            <div class="project-header">
+              <div class="project-icon"><i class="fas fa-chart-line"></i></div>
+              <div class="project-links">
+                <a href="#" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                <a href="#" target="_blank" title="Live Demo"><i class="fas fa-external-link-alt"></i></a>
+              </div>
+            </div>
+            <h3 class="project-title">Analytics Dashboard</h3>
+            <p class="project-desc">Real-time data visualization dashboard with D3.js charts, filters, CSV export and dark/light theme.</p>
+            <div class="project-tech">
+              <span>React</span><span>D3.js</span><span>Python</span><span>FastAPI</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project Card 4 -->
+        <div class="project-card scroll-reveal">
+          <div class="project-card-inner">
+            <div class="project-header">
+              <div class="project-icon"><i class="fas fa-graduation-cap"></i></div>
+              <div class="project-links">
+                <a href="#" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                <a href="#" target="_blank" title="Live Demo"><i class="fas fa-external-link-alt"></i></a>
+              </div>
+            </div>
+            <h3 class="project-title">Learning Management System</h3>
+            <p class="project-desc">A complete LMS with video streaming, quiz engine, progress tracking, and certificate generation.</p>
+            <div class="project-tech">
+              <span>React</span><span>Express</span><span>PostgreSQL</span><span>AWS S3</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project Card 5 -->
+        <div class="project-card scroll-reveal">
+          <div class="project-card-inner">
+            <div class="project-header">
+              <div class="project-icon"><i class="fas fa-mobile-alt"></i></div>
+              <div class="project-links">
+                <a href="#" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                <a href="#" target="_blank" title="Live Demo"><i class="fas fa-external-link-alt"></i></a>
+              </div>
+            </div>
+            <h3 class="project-title">Task Manager App</h3>
+            <p class="project-desc">A productivity app with drag-and-drop Kanban boards, team collaboration, deadline tracking & notifications.</p>
+            <div class="project-tech">
+              <span>React Native</span><span>Firebase</span><span>Redux</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project Card 6 -->
+        <div class="project-card scroll-reveal">
+          <div class="project-card-inner">
+            <div class="project-header">
+              <div class="project-icon"><i class="fas fa-lock"></i></div>
+              <div class="project-links">
+                <a href="#" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                <a href="#" target="_blank" title="Live Demo"><i class="fas fa-external-link-alt"></i></a>
+              </div>
+            </div>
+            <h3 class="project-title">Secure Auth System</h3>
+            <p class="project-desc">OAuth2, JWT, 2FA, and role-based access control system built for enterprise-grade applications.</p>
+            <div class="project-tech">
+              <span>Node.js</span><span>JWT</span><span>MongoDB</span><span>OAuth2</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="projects-cta scroll-reveal">
+        <a href="https://github.com/omkarpriyadarsan" target="_blank" id="githubLink2" class="btn btn-outline">
+          <i class="fab fa-github"></i> View All on GitHub
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CONTACT ========== -->
+  <section class="section contact" id="contact">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-num mono">04.</span>
+        <h2 class="section-title">Contact Me</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info scroll-reveal">
+          <h3>Let's Build Something Amazing</h3>
+          <p>Have a project in mind, a collaboration idea, or just want to say hi? My inbox is always open. I'll get back to you as soon as possible!</p>
+          <div class="contact-details">
+            <div class="contact-item">
+              <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+              <div>
+                <span class="mono" style="font-size:0.7rem;color:var(--accent);">EMAIL</span>
+                <p>omkarpriyadarsan2@gmail.com</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon"><i class="fab fa-github"></i></div>
+              <div>
+                <span class="mono" style="font-size:0.7rem;color:var(--accent);">GITHUB</span>
+                <p><a href="https://github.com/omkarpriyadarsan" target="_blank" id="githubLink3">github.com/yourusername</a></p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon"><i class="fab fa-linkedin-in"></i></div>
+              <div>
+                <span class="mono" style="font-size:0.7rem;color:var(--accent);">LINKEDIN</span>
+                <p><a href="https://linkedin.com/in/omkar-priyadarsan-58b224309" target="_blank" id="linkedinLink2">linkedin.com/in/yourusername</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form-wrap scroll-reveal">
+          <form class="contact-form" id="contactForm" novalidate>
+            <div class="form-group">
+              <label class="form-label mono" for="userName">YOUR NAME</label>
+              <input type="text" id="userName" name="from_name" class="form-input" placeholder="John Doe" required/>
+              <span class="form-error" id="nameError"></span>
+            </div>
+            <div class="form-group">
+              <label class="form-label mono" for="userEmail">YOUR EMAIL</label>
+              <input type="email" id="userEmail" name="from_email" class="form-input" placeholder="john@example.com" required/>
+              <span class="form-error" id="emailError"></span>
+            </div>
+            <div class="form-group">
+              <label class="form-label mono" for="userSubject">SUBJECT</label>
+              <input type="text" id="userSubject" name="subject" class="form-input" placeholder="Project Collaboration" required/>
+              <span class="form-error" id="subjectError"></span>
+            </div>
+            <div class="form-group">
+              <label class="form-label mono" for="userMessage">PURPOSE / MESSAGE</label>
+              <textarea id="userMessage" name="message" class="form-input form-textarea" placeholder="Tell me about your project or inquiry..." required></textarea>
+              <span class="form-error" id="messageError"></span>
+            </div>
+            <button type="submit" class="btn btn-primary btn-full" id="submitBtn">
+              <span class="btn-text">Send Message</span>
+              <span class="btn-loader" style="display:none;"><i class="fas fa-spinner fa-spin"></i></span>
+              <i class="fas fa-paper-plane btn-icon"></i>
+            </button>
+            <div class="form-status" id="formStatus"></div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-logo glitch" data-text="OP">OP</div>
+      <p class="mono footer-copy">© <span id="year"></span> Omkar Priyadarsan. Built with <span class="accent-text">♥</span> & code.</p>
+      <div class="footer-socials">
+        <a href="https://github.com/omkarpriyadarsan" target="_blank" id="githubLink4"><i class="fab fa-github"></i></a>
+        <a href="https://linkedin.com/in/omkar-priyadarsan-58b224309" target="_blank" id="linkedinLink3"><i class="fab fa-linkedin-in"></i></a>
+        <a href="mailto:omkarpriyadarsan2@gmail.com"><i class="fas fa-envelope"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
